@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050816"><title>BTECH-TV WORLD — Super Admin</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<aside class="admin-side">
+  <div class="admin-brand"><img src="assets/btech-tv-world-channels.svg"><div><b>BTECH-TV</b><span>SUPER ADMIN</span></div></div>
+  <button class="admin-nav active" data-section="overview">⌂ Overview</button>
+  <button class="admin-nav" data-section="channels">📺 All Channels <em id="navChannelCount">0</em></button>
+  <button class="admin-nav" data-section="health">🩺 Channel Health <em id="navHealthCount">0</em></button>
+  <button class="admin-nav" data-section="locked">🔒 Locked Channels <em id="navLockedCount">0</em></button>
+  <button class="admin-nav" data-section="users">👥 User Manager <em id="navUserCount">0</em></button>
+  <button class="admin-nav" data-section="payview">💳 Pay-To-View</button>
+  <button class="admin-nav" data-section="settings">⚙ Settings</button>
+  <div class="side-bottom">
+    <a href="index.html">← Open TV Dashboard</a>
+    <button id="exportBtn">⇩ Export Admin Data</button>
+    <button id="resetBtn">↺ Reset Demo Controls</button>
+  </div>
+</aside>
+<main class="admin-main">
+<header class="admin-top">
+  <div><span class="eyebrow">BTECH CONTROL CENTER</span><h1 id="sectionTitle">Super Admin Overview</h1></div>
+  <div class="top-right"><span class="online"><i></i> SYSTEM ONLINE</span><span class="admin-user">SUPER ADMIN</span></div>
+</header>
+
+<section class="monitor-shell" id="monitorShell">
+  <div class="monitor-head">
+    <div><span class="monitor-eyebrow">LIVE MONITOR</span><h2 id="monitorTitle">Select a channel to monitor</h2><p id="monitorMeta">Super Admin channel preview</p></div>
+    <div class="monitor-status"><i></i><span id="monitorStatus">READY</span></div>
+  </div>
+  <div class="monitor-grid">
+    <div class="monitor-player">
+      <video id="monitorVideo" playsinline controls preload="metadata"></video>
+      <div class="monitor-overlay"><span id="monitorLive">● LIVE</span><span id="monitorClock">00:00</span></div>
+      <div id="monitorEmpty" class="monitor-empty"><div>▶</div><b>Channel Monitor</b><span>Choose ▶ on any channel to start monitoring.</span></div>
+    </div>
+    <div class="monitor-info">
+      <div class="monitor-logo-wrap"><img id="monitorLogo" alt=""><div><b id="monitorCountry">—</b><span id="monitorQuality">—</span></div></div>
+      <div class="monitor-actions"><button id="monitorPrev">‹ Previous</button><button id="monitorPlay" class="primary">▶ Play</button><button id="monitorStop">■ Stop</button><button id="monitorNext">Next ›</button><button id="monitorFullscreen">⛶ Fullscreen</button></div>
+      <div class="monitor-rule"><span>Channel ID</span><b id="monitorId">—</b></div>
+      <div class="monitor-rule"><span>Access</span><b id="monitorAccess">—</b></div>
+      <div class="monitor-rule"><span>Stream</span><b id="monitorStream">—</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="overview" class="section active">
+  <div class="kpis">
+    <div class="kpi"><span>TOTAL CHANNELS</span><strong id="kTotal">0</strong><small>Catalog streams</small></div>
+    <div class="kpi"><span>LIVE / AVAILABLE</span><strong id="kLive">0</strong><small>With stream URL</small></div>
+    <div class="kpi"><span>LOCKED</span><strong id="kLocked">0</strong><small>Access controlled</small></div>
+    <div class="kpi"><span>USERS</span><strong id="kUsers">0</strong><small>Registered accounts</small></div>
+    <div class="kpi"><span>PAY-TO-VIEW</span><strong id="kPtv">0</strong><small>Premium channels</small></div>
+    <div class="kpi"><span>REVENUE</span><strong id="kRevenue">₦0</strong><small>Demo transactions</small></div>
+  </div>
+  <div class="grid2">
+    <div class="panel"><div class="panel-head"><h2>Channel Control</h2><button class="small primary" data-go="channels">Manage</button></div>
+      <div class="control-list">
+        <div><span>Public channels</span><b id="publicCount">0</b></div>
+        <div><span>Locked channels</span><b id="lockedCount">0</b></div>
+        <div><span>Pay-To-View channels</span><b id="ptvCount">0</b></div>
+        <div><span>Disabled channels</span><b id="disabledCount">0</b></div>
+      </div>
+    </div>
+    <div class="panel"><div class="panel-head"><h2>Quick Actions</h2></div>
+      <div class="quick-grid">
+        <button data-go="channels">📺 Channel Director</button><button data-go="locked">🔐 Lock Manager</button>
+        <button data-go="users">👥 User Manager</button><button data-go="payview">💳 Pay-To-View</button>
+        <button data-go="settings">⚙ Platform Settings</button><button id="previewBtn">▶ Monitor Preview</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel"><div class="panel-head"><h2>Recent Admin Activity</h2></div><div id="activityLog" class="activity"></div></div>
+</section>
+
+<section id="channels" class="section">
+  <div class="section-tools"><div><h2>All Channels</h2><p>Super Admin has full control over the complete catalog.</p></div>
+    <div class="tool-actions"><button id="bulkLock" class="small">🔒 Lock Selected</button><button id="bulkUnlock" class="small">🔓 Unlock Selected</button><button id="bulkPtv" class="small">💳 Pay-To-View Selected</button></div>
+  </div>
+  <div class="toolbar"><input id="channelSearch" placeholder="Search channel, country, category..."><select id="channelCountry"><option value="">All countries</option></select><select id="channelStatus"><option value="">All access</option><option value="public">Public</option><option value="locked">Locked</option><option value="ptv">Pay-To-View</option><option value="disabled">Disabled</option></select><label><input type="checkbox" id="selectAll"> Select all visible</label></div>
+  <div class="table-wrap"><table><thead><tr><th></th><th>CHANNEL</th><th>COUNTRY</th><th>CATEGORY</th><th>QUALITY</th><th>ACCESS</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="channelRows"></tbody></table></div>
+  <div class="pager"><span id="channelResult">0</span><div><button id="prevPage">‹</button><button id="nextPage">›</button></div></div>
+</section>
+
+<section id="health" class="section">
+  <div class="section-tools"><div><h2>Channel Health Monitor</h2><p>Inspect stream availability and quickly open a channel in the fixed monitor player.</p></div><button id="healthRefresh" class="small primary">↻ Refresh Health</button></div>
+  <div class="ptv-summary health-summary"><div><b id="healthOnline">0</b><span>Online</span></div><div><b id="healthOffline">0</b><span>Offline</span></div><div><b id="healthLocked">0</b><span>Restricted</span></div><div><b id="healthShown">0</b><span>Checked</span></div></div>
+  <div class="toolbar"><input id="healthSearch" placeholder="Search channel or country..."><select id="healthFilter"><option value="all">All</option><option value="online">Online</option><option value="offline">Offline</option><option value="restricted">Restricted</option></select></div>
+  <div class="table-wrap"><table><thead><tr><th>CHANNEL</th><th>COUNTRY</th><th>ACCESS</th><th>STREAM</th><th>LAST CHECK</th><th>ACTIONS</th></tr></thead><tbody id="healthRows"></tbody></table></div>
+</section>
+
+<section id="locked" class="section">
+  <div class="section-tools"><div><h2>Locked Channel Manager</h2><p>Control channels that require a package, PIN, subscription or Pay-To-View access.</p></div><button id="unlockAll" class="small primary">🔓 Unlock All</button></div>
+  <div id="lockedCards" class="locked-grid"></div>
+</section>
+
+<section id="users" class="section">
+  <div class="section-tools"><div><h2>User Manager</h2><p>Create, suspend, activate and manage package access.</p></div><button id="addUser" class="small primary">＋ Add User</button></div>
+  <div class="toolbar"><input id="userSearch" placeholder="Search users..."><select id="userStatus"><option value="">All statuses</option><option>Active</option><option>Suspended</option></select></div>
+  <div class="table-wrap"><table><thead><tr><th>USER</th><th>EMAIL</th><th>PACKAGE</th><th>EXPIRES</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="userRows"></tbody></table></div>
+</section>
+
+<section id="payview" class="section">
+  <div class="section-tools"><div><h2>Pay-To-View Control</h2><p>Set individual channel prices and premium access rules.</p></div><button id="addPtv" class="small primary">＋ Add Pay-To-View</button></div>
+  <div class="ptv-summary"><div><b id="ptvChannels">0</b><span>Premium Channels</span></div><div><b id="ptvOrders">0</b><span>Demo Orders</span></div><div><b id="ptvRevenue">₦0</b><span>Demo Revenue</span></div></div>
+  <div class="table-wrap"><table><thead><tr><th>CHANNEL</th><th>PRICE</th><th>DURATION</th><th>ACCESS</th><th>ACTIONS</th></tr></thead><tbody id="ptvRows"></tbody></table></div>
+</section>
+
+<section id="settings" class="section">
+  <div class="section-tools"><div><h2>Platform Settings</h2><p>Configure access, player, security and payment controls.</p></div><button id="saveSettings" class="small primary">Save Settings</button></div>
+  <div class="settings-grid">
+    <div class="panel"><h3>Access & Security</h3><label>Platform name<input id="sName"></label><label>Default trial minutes<input id="sTrial" type="number"></label><label>Default package channels<input id="sPackage" type="number"></label><label>Admin PIN<input id="sPin" type="password"></label></div>
+    <div class="panel"><h3>Streaming</h3><label><span>Allow public channels</span><input id="sPublic" type="checkbox"></label><label><span>Allow Pay-To-View</span><input id="sPtv" type="checkbox"></label><label><span>Enable channel locking</span><input id="sLock" type="checkbox"></label><label><span>Player watermark</span><input id="sWatermark" type="checkbox"></label></div>
+    <div class="panel"><h3>Payment Gateways</h3><label><span>Paystack</span><input id="gPaystack" type="checkbox"></label><label><span>Flutterwave</span><input id="gFlutter" type="checkbox"></label><label><span>Monnify</span><input id="gMonnify" type="checkbox"></label><label><span>Stripe</span><input id="gStripe" type="checkbox"></label><small class="notice">Gateway checkouts must be verified server-side before production access is granted.</small></div>
+  </div>
+</section>
+</main>
+<div id="modal" class="modal"><div class="modal-card"><button id="closeModal" class="modal-close">×</button><div id="modalBody"></div></div></div>
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script><script src="js/admin.js"></script>
+</body></html>
