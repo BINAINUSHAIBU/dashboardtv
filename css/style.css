@@ -1,0 +1,197 @@
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#050816;color:#eaf4ff;font:14px Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;min-height:100vh}.sidebar{width:270px;min-width:270px;background:#0b1222;border-right:1px solid #1c2b49;padding:18px 14px;display:flex;flex-direction:column;gap:8px;overflow:auto}.brand{display:flex;gap:10px;align-items:center;padding:4px 6px 18px}.brand-logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#00d4ff,#1476ff);font-weight:900;color:#00101c}.brand strong,.brand span{display:block}.brand span{font-size:10px;color:#6f849f;letter-spacing:1.5px;margin-top:3px}.nav,.side-list button,.side-action{border:0;background:transparent;color:#9fb0c8;text-align:left;border-radius:9px;padding:10px 11px;cursor:pointer}.nav:hover,.nav.active,.side-list button:hover,.side-list button.active{background:#13213a;color:#fff}.side-title{font-size:10px;color:#5e7390;letter-spacing:1.5px;margin:15px 8px 2px}.side-list{display:flex;flex-direction:column;gap:2px}.side-list button{font-size:12px;display:flex;justify-content:space-between}.side-list button span{color:#5e7390}.side-footer{margin-top:auto;border-top:1px solid #1c2b49;padding-top:12px;display:grid;gap:7px}.side-footer a{color:#6f849f;text-decoration:none;font-size:11px;padding:5px 8px}.main{min-width:0;flex:1;overflow:auto}.topbar{height:68px;border-bottom:1px solid #172640;display:flex;align-items:center;gap:12px;padding:12px 22px;position:sticky;top:0;background:rgba(5,8,22,.9);backdrop-filter:blur(12px);z-index:5}.search-wrap{flex:1;max-width:650px;background:#0b1427;border:1px solid #1d3152;border-radius:10px;display:flex;align-items:center;padding:0 12px;color:#5f7898}.search-wrap input{width:100%;background:transparent;border:0;outline:0;color:#fff;padding:11px}.top-actions{margin-left:auto;display:flex;gap:8px}.top-actions button{border:1px solid #243b60;background:#101b30;color:#dceaff;border-radius:9px;padding:10px 13px;cursor:pointer}.top-actions .primary{background:#00bde5;border-color:#00d4ff;color:#00121a;font-weight:800}.hero{padding:28px 24px 20px;display:flex;justify-content:space-between;gap:20px;align-items:center}.eyebrow{color:#00d4ff;font-size:11px;font-weight:800;letter-spacing:1.5px}.hero h1{margin:5px 0;font-size:32px}.hero p{color:#7890ae;margin:0}.hero-status{font-size:12px;color:#91a6bf;white-space:nowrap}.pulse,.live-dot{display:inline-block;border-radius:50%;background:#21e58a}.pulse{width:8px;height:8px;margin-right:7px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 24px 20px}.stat{background:#0a1325;border:1px solid #172b4a;border-radius:12px;padding:14px 16px}.stat span{font-size:10px;color:#637995;letter-spacing:1.3px}.stat b{display:block;font-size:24px;margin-top:5px}.workspace{padding:0 24px 30px}.player-card{background:#080f1e;border:1px solid #1a2c49;border-radius:14px;overflow:hidden}.player-head,.player-info,.result-bar{display:flex;align-items:center;justify-content:space-between;gap:10px}.player-head{padding:12px 14px}.live-dot{font-size:9px;color:#00150b;padding:3px 6px;margin-right:7px}.player{height:370px;background:#000;position:relative;display:grid;place-items:center}.player video{width:100%;height:100%;object-fit:contain;background:#000}.player-empty{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:7px;color:#667b96;text-align:center;pointer-events:none}.big-tv{font-size:44px;opacity:.7}.player-empty strong{color:#b8c9dc}.player-empty small{max-width:440px}.player-info{padding:10px 14px;border-top:1px solid #172640;color:#7287a1}.ghost{background:#101b30;border:1px solid #263d61;color:#a8bbd3;border-radius:8px;padding:7px 10px;cursor:pointer}.filters-card{margin:14px 0;background:#0a1325;border:1px solid #172b4a;border-radius:12px;padding:12px}.filter-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.filter-row select{background:#0d172b;border:1px solid #243957;color:#d9e7f7;border-radius:8px;padding:10px;outline:0}.result-bar{margin-top:11px;color:#9cb0c8}.result-bar span{font-size:12px;color:#637995}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}.channel{background:#0a1325;border:1px solid #172b4a;border-radius:12px;overflow:hidden;cursor:pointer;transition:.15s}.channel:hover{border-color:#00aacc;transform:translateY(-1px)}.thumb{height:108px;background:#0d182c;display:grid;place-items:center;position:relative}.thumb img{width:100%;height:100%;object-fit:contain;padding:17px}.quality{position:absolute;left:8px;top:8px;background:#06101eeb;border:1px solid #284566;border-radius:5px;font-size:9px;padding:3px 5px}.star{position:absolute;right:7px;top:6px;background:#06101eeb;border:0;color:#7288a3;font-size:17px;cursor:pointer}.star.on{color:#ffd45a}.card-body{padding:10px}.name{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{color:#657d99;font-size:11px;margin-top:4px;display:flex;gap:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.badge{display:inline-block;margin-top:8px;font-size:9px;padding:3px 6px;border-radius:5px;background:#12243b;color:#83a2c4}.load-more{width:100%;margin:15px 0;border:1px solid #243b60;background:#101b30;color:#cfe2f7;padding:11px;border-radius:9px;cursor:pointer}.empty{text-align:center;color:#6d829d;padding:50px}.toast{position:fixed;right:18px;bottom:18px;background:#122039;border:1px solid #2a456b;color:#dcecff;padding:10px 13px;border-radius:9px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:none}@media(max-width:900px){.sidebar{display:none}.topbar{padding:10px 12px}.hero,.workspace,.stats{padding-left:12px;padding-right:12px}.filter-row{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.player{height:280px}}@media(max-width:520px){.hero{display:block}.hero-status{margin-top:12px}.filter-row{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top-actions .primary{font-size:0;padding:10px}.top-actions .primary:first-letter{font-size:14px}}
+
+/* =========================================================
+   BTECH CUSTOMIZED DASHBOARD — FIXED MONITOR / SCROLL ZONES
+   ========================================================= */
+html,body{height:100%;overflow:hidden}
+body{display:flex;min-height:100vh;background:#050816;color:#dceaff}
+
+/* Fixed left navigation with its own vertical scroll */
+.sidebar{
+  width:260px;min-width:260px;height:100vh;box-sizing:border-box;
+  position:fixed;left:0;top:0;bottom:0;z-index:30;
+  overflow-y:auto;overflow-x:hidden;
+  scrollbar-width:thin;scrollbar-color:#294568 #081121;
+  display:flex;flex-direction:column;
+}
+.sidebar::-webkit-scrollbar{width:7px}
+.sidebar::-webkit-scrollbar-track{background:#081121}
+.sidebar::-webkit-scrollbar-thumb{background:#294568;border-radius:10px}
+
+/* Main shell does not move; only its designated content areas scroll */
+.main{
+  margin-left:260px;width:calc(100vw - 260px);height:100vh;
+  min-width:0;display:flex;flex-direction:column;overflow:hidden;
+}
+
+/* Header remains fixed inside the dashboard shell */
+.topbar{
+  flex:0 0 68px;height:68px;box-sizing:border-box;
+  position:relative;top:auto;z-index:20;
+}
+
+/* Dashboard content gets a stable viewport */
+.hero{flex:0 0 auto}
+.stats{flex:0 0 auto}
+
+/* Workspace itself is the dashboard content region */
+.workspace{
+  flex:1 1 auto;min-height:0;overflow:hidden;
+  display:flex;flex-direction:column;padding-bottom:16px;
+}
+
+/* BTECH Monitor is always visible */
+.player-card{
+  flex:0 0 auto;
+  position:relative;z-index:15;
+  box-shadow:0 10px 35px rgba(0,0,0,.30);
+}
+.player{
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  min-height:0;
+  max-height:360px;
+  background:#000;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+}
+.player video{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#000;
+}
+
+/* Channel Director header/filter stays above its scrolling list */
+.filters-card{
+  flex:0 0 auto;
+  margin:10px 0 8px;
+  position:relative;z-index:10;
+}
+
+/* Dedicated Channel Director scrolling area */
+.channel-director-scroll{
+  flex:1 1 auto;min-height:0;
+  overflow-y:auto;overflow-x:hidden;
+  padding:0 4px 18px 0;
+  scrollbar-width:thin;scrollbar-color:#294568 #081121;
+}
+.channel-director-scroll::-webkit-scrollbar{width:8px}
+.channel-director-scroll::-webkit-scrollbar-track{background:#081121;border-radius:8px}
+.channel-director-scroll::-webkit-scrollbar-thumb{background:#294568;border-radius:8px}
+.channel-director-scroll::-webkit-scrollbar-thumb:hover{background:#00aacc}
+
+/* Make the grid itself normal; its parent owns scrolling */
+.grid{padding-bottom:2px}
+.load-more{margin:12px 0 4px}
+
+/* Keep toast above every scroll layer */
+.toast{z-index:100}
+
+/* Small-screen behavior: retain usable fixed monitor */
+@media(max-width:900px){
+  .sidebar{
+    width:220px;min-width:220px;
+  }
+  .main{
+    margin-left:220px;width:calc(100vw - 220px);
+  }
+  .player{height:auto;min-height:0;max-height:none;aspect-ratio:16 / 9}
+}
+@media(max-width:700px){
+  .sidebar{display:none}
+  .main{margin-left:0;width:100vw}
+  .player{height:auto;min-height:0;max-height:none;aspect-ratio:16 / 9}
+}
+@media(max-width:520px){
+  .player{height:auto;min-height:0;max-height:none;aspect-ratio:16 / 9}
+}
+
+.btech-monitor-label{font-size:9px;letter-spacing:1.4px;color:#00d4ff;font-weight:800;margin-left:6px;vertical-align:middle}
+
+/* BTECH access / package layer */
+.access-gate{position:fixed;inset:0;background:rgba(3,7,18,.88);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;z-index:5000;padding:20px}.access-gate.show{display:flex}.access-panel{width:min(680px,96vw);background:#0b1222;border:1px solid rgba(0,212,255,.28);border-radius:22px;box-shadow:0 25px 90px rgba(0,0,0,.55);padding:28px}.access-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}.access-brand .brand-logo{width:48px;height:48px;border-radius:12px}.access-panel h2{margin:0 0 8px}.access-panel p{color:#9fb0c8}.trial-timer{font-size:38px;font-weight:900;color:#00d4ff;text-align:center;margin:20px 0}.package-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.package-grid label{display:block;color:#9fb0c8;font-size:12px;margin-bottom:6px}.package-grid select,.package-grid input{width:100%;padding:13px;border-radius:10px;border:1px solid #263754;background:#101a2e;color:#fff}.package-full{grid-column:1/-1}.access-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}.access-btn{border:0;border-radius:10px;padding:12px 18px;cursor:pointer;background:#00d4ff;color:#04101b;font-weight:800}.access-btn.secondary{background:#18253c;color:#d8e5f5}.plan-status{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:#10253b;color:#8eeaff;font-size:12px}.player-watermark{position:absolute;right:18px;top:16px;z-index:5;display:flex;align-items:center;gap:7px;padding:5px 9px;border-radius:8px;background:rgba(3,8,18,.68);color:#00e5ff;font-weight:900;font-size:14px;letter-spacing:.5px;pointer-events:none}.player-watermark .wm-mark{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#00e5ff,#1976ff);display:grid;place-items:center;color:#03101a;font-size:10px}.package-banner{margin-left:10px}
+@media(max-width:700px){.package-grid{grid-template-columns:1fr}.package-full{grid-column:auto}.access-panel{padding:20px}.trial-timer{font-size:30px}}
+
+/* BTECH-TV WORLD CHANNELS branding */
+.player-title-group{display:flex;align-items:center;gap:14px;min-width:0}.player-outside-logo{width:230px;height:43px;object-fit:contain;object-position:left center;flex:0 0 auto}.player-channel-title{min-width:0}.player-channel-title strong{display:block;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-watermark{position:absolute;right:18px;top:16px;z-index:5;width:190px;padding:7px 9px;border-radius:9px;background:rgba(3,8,18,.72);border:1px solid rgba(0,229,255,.22);box-shadow:0 5px 22px rgba(0,0,0,.35);pointer-events:none;opacity:.9}.player-watermark img{display:block;width:100%;height:auto}.player-brand-strip{display:flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:8px 14px;background:linear-gradient(90deg,#081327,#0b1930,#081327);border-top:1px solid #172640;border-bottom:1px solid #172640}.player-brand-strip img{width:220px;max-width:45%;height:34px;object-fit:contain}.player-brand-strip span{font-size:11px;color:#6f849f;letter-spacing:.7px}
+@media(max-width:900px){.player-outside-logo{width:180px;height:38px}.player-watermark{width:150px;right:10px;top:10px}.player-brand-strip img{width:190px}}
+@media(max-width:520px){.player-title-group{gap:8px}.player-outside-logo{width:125px;height:32px}.player-channel-title .btech-monitor-label{display:none}.player-watermark{width:120px;opacity:.78}.player-brand-strip{gap:7px}.player-brand-strip img{width:145px;max-width:50%;height:28px}.player-brand-strip span{font-size:9px}}
+
+
+/* =========================================================
+   BTECH-TV WORLD CHANNELS — FULL BRAND CUSTOMIZATION
+   ========================================================= */
+:root{
+  --btech-bg:#030712;
+  --btech-panel:#07111f;
+  --btech-panel-2:#0a1729;
+  --btech-line:#183453;
+  --btech-cyan:#00e5ff;
+  --btech-blue:#147cff;
+  --btech-green:#20e39a;
+  --btech-text:#ecf8ff;
+  --btech-muted:#7891ad;
+}
+body{background:radial-gradient(circle at 72% -10%,rgba(0,229,255,.10),transparent 28%),radial-gradient(circle at 25% 20%,rgba(20,124,255,.08),transparent 24%),var(--btech-bg)}
+.sidebar{background:linear-gradient(180deg,#06101d 0%,#081322 55%,#050b15 100%);border-right:1px solid rgba(0,229,255,.15);box-shadow:12px 0 40px rgba(0,0,0,.24)}
+.brand-world{padding:8px 8px 20px;border-bottom:1px solid rgba(0,229,255,.12);margin-bottom:6px;position:relative}
+.brand-world:after{content:"";position:absolute;left:8px;right:8px;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--btech-cyan),transparent);opacity:.55}
+.sidebar-brand-logo{width:210px;max-width:100%;height:58px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 12px rgba(0,229,255,.16))}
+.brand-copy{display:none!important}
+.nav{font-weight:750;letter-spacing:.15px;border:1px solid transparent;transition:.18s ease}
+.nav:hover,.nav.active{background:linear-gradient(90deg,rgba(0,229,255,.12),rgba(20,124,255,.08));border-color:rgba(0,229,255,.16);box-shadow:inset 3px 0 var(--btech-cyan);color:#fff}
+.side-title{color:#00b8d4;font-weight:800}
+.side-list button:hover,.side-list button.active{background:#0d2037;color:#fff}
+.side-footer{border-top-color:rgba(0,229,255,.12)}
+.side-action{border:1px solid #173554!important;background:#09182a!important}
+.topbar{background:rgba(3,7,18,.88);border-bottom:1px solid rgba(0,229,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.search-wrap{background:#071426;border-color:#173554;box-shadow:inset 0 0 0 1px rgba(0,229,255,.025)}
+.search-wrap:focus-within{border-color:rgba(0,229,255,.65);box-shadow:0 0 0 3px rgba(0,229,255,.07)}
+.world-chip{display:flex;align-items:center;height:38px;padding:0 12px;border:1px solid rgba(0,229,255,.2);border-radius:9px;background:linear-gradient(135deg,rgba(0,229,255,.09),rgba(20,124,255,.08));color:#9fefff;font-size:10px;font-weight:900;letter-spacing:.8px;white-space:nowrap}
+.world-chip:first-letter{color:#20e39a}
+.top-actions button{border-color:#1b3a5c;background:#09182a}
+.top-actions .primary{background:linear-gradient(135deg,var(--btech-cyan),#1e8fff);box-shadow:0 5px 20px rgba(0,212,255,.18)}
+.hero{background:linear-gradient(180deg,rgba(6,17,31,.58),transparent);border-bottom:1px solid rgba(0,229,255,.05)}
+.eyebrow{color:var(--btech-cyan)}
+.hero h1{font-size:clamp(26px,3vw,38px);letter-spacing:-.8px}
+.hero h1 span{background:linear-gradient(90deg,#00e5ff,#66c8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:760px}
+.stat{background:linear-gradient(145deg,#081526,#07101d);border-color:#153352;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.stat b{color:#f5fbff}
+.workspace{position:relative}
+.player-card{border-color:rgba(0,229,255,.19);box-shadow:0 18px 55px rgba(0,0,0,.30),0 0 0 1px rgba(20,124,255,.03)}
+.player-head{background:linear-gradient(90deg,#07182b,#091322);border-bottom:1px solid rgba(0,229,255,.10)}
+.player-title-group{min-width:0}
+.player-channel-title strong{font-size:15px;color:#f5fbff}
+.player{background:radial-gradient(circle at center,#091525,#000 65%)}
+.player:before{content:"BTECH-TV WORLD CHANNELS";position:absolute;left:18px;bottom:16px;z-index:4;padding:5px 8px;border-radius:6px;background:rgba(0,0,0,.48);border:1px solid rgba(0,229,255,.13);color:rgba(171,241,255,.66);font-size:9px;font-weight:900;letter-spacing:1.2px;pointer-events:none}
+.player-watermark{opacity:.82;filter:drop-shadow(0 3px 12px rgba(0,0,0,.65))}
+.player-brand-strip{background:linear-gradient(90deg,#061120,#0a1c31 45%,#061120);min-height:56px}
+.player-brand-strip span{color:#87a5c2;font-weight:700}
+.filters-card{background:linear-gradient(145deg,#081526,#07111f);border-color:#153452;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.filter-row select{background:#08182b;border-color:#1b3a5b}
+.filter-row select:focus{border-color:var(--btech-cyan);outline:none;box-shadow:0 0 0 3px rgba(0,229,255,.06)}
+.result-bar strong{color:#dff8ff;text-transform:uppercase;letter-spacing:.8px}
+.channel{background:linear-gradient(145deg,#09182a,#07111e);border-color:#153451;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.channel:hover{border-color:rgba(0,229,255,.65);box-shadow:0 10px 30px rgba(0,229,255,.08),0 8px 24px rgba(0,0,0,.25);transform:translateY(-2px)}
+.thumb{background:radial-gradient(circle at center,#112640,#081323);border-bottom:1px solid #122c48}
+.quality{border-color:#27547c;color:#aeeeff}
+.badge{background:#0b263c;border:1px solid #174360;color:#76dff5}
+.load-more{background:linear-gradient(90deg,#0a1a2c,#0d2037);border-color:#1b4163}
+.toast{background:#071a2a;border-color:#16708d;box-shadow:0 12px 35px rgba(0,0,0,.35)}
+.access-panel{background:radial-gradient(circle at top right,rgba(0,229,255,.09),transparent 35%),linear-gradient(145deg,#081526,#050c17);border-color:rgba(0,229,255,.35)}
+.access-logo{width:255px;max-width:58%;height:52px;object-fit:contain;object-position:left center}
+.access-brand strong{font-size:15px;color:#f3fbff;letter-spacing:.4px}
+.access-btn{background:linear-gradient(135deg,#00e5ff,#1686ff);box-shadow:0 8px 25px rgba(0,180,255,.18)}
+.plan-status{background:linear-gradient(135deg,#09263a,#0c1c34);border-color:rgba(0,229,255,.16);box-shadow:inset 0 0 20px rgba(0,229,255,.03)}
+@media(max-width:900px){.world-chip{display:none}.sidebar-brand-logo{width:180px}.access-logo{width:210px}}
+@media(max-width:520px){.sidebar-brand-logo{width:150px;height:48px}.access-logo{max-width:100%;width:220px}.access-brand{align-items:flex-start;flex-direction:column}.hero h1{font-size:27px}.player:before{left:9px;bottom:9px;font-size:7px}.player-watermark{right:8px;top:8px}}
+
+.admin-link{display:inline-flex;align-items:center;text-decoration:none;background:#101b30;border:1px solid #00aeca;color:#8deeff;border-radius:9px;padding:10px 12px;font-weight:800;font-size:12px}.admin-link:hover{background:#12304a}@media(max-width:900px){.admin-link{padding:9px}}
