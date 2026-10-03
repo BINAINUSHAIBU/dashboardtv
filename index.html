@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050816">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="preconnect" href="https://iptv-org.github.io" crossorigin>
+  <link rel="dns-prefetch" href="//iptv-org.github.io">
+  <title>BTECH-TV WORLD IPTV DASHBOARD</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand brand-world">
+      <img src="assets/btech-tv-world-channels.svg" alt="BTECH-TV WORLD CHANNELS" class="sidebar-brand-logo">
+      <div class="brand-copy"><strong>BTECH-TV</strong><span>WORLD CHANNELS</span><small>GLOBAL IPTV PLATFORM</small></div>
+    </div>
+
+    <button class="nav active" data-view="all">📺 All Channels</button>
+    <button class="nav" data-view="favorites">⭐ Favorites</button>
+
+    <div class="side-title">COUNTRIES</div>
+    <div id="countryList" class="side-list"></div>
+
+    <div class="side-title">CATEGORIES</div>
+    <div id="categoryList" class="side-list"></div>
+
+    <div class="side-footer">
+      <button id="reloadBtn" class="side-action">↻ Reload catalog</button>
+      <a href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener">Public stream source ↗</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Search channels, countries, categories...">
+      </div>
+      <div class="top-actions"><div class="world-chip">● BTECH-TV WORLD CHANNELS</div>
+        <button id="downloadBtn" class="primary">⬇ Download All TV</button>
+        <a href="super-admin.html" class="admin-link">⚡ Super Admin</a>
+        <button id="fullscreenBtn" title="Fullscreen">⛶</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">● LIVE IPTV ENGINE</div>
+        <h1>BTECH-TV <span>WORLD CHANNELS</span></h1>
+        <p>Global live television, organized and customized for the BTECH-TV World Channels experience.</p>
+      </div>
+      <div class="hero-status"><span class="pulse"></span><span id="statusText">Loading catalog...</span><span id="planStatus" class="plan-status package-banner">5-MIN TRIAL</span></div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>CHANNELS</span><b id="totalStat">0</b></div>
+      <div class="stat"><span>VISIBLE</span><b id="visibleStat">0</b></div>
+      <div class="stat"><span>FAVORITES</span><b id="favStat">0</b></div>
+      <div class="stat"><span>COUNTRIES</span><b id="countryStat">0</b></div>
+    </section>
+
+    <section class="workspace">
+      <div class="player-card">
+        <div class="player-head">
+          <div class="player-title-group">
+            <img class="player-outside-logo" src="assets/btech-tv-world-channels.svg" alt="BTECH-TV WORLD CHANNELS">
+            <div class="player-channel-title">
+              <div><span class="live-dot">LIVE</span> <span class="btech-monitor-label">BTECH MONITOR</span></div>
+              <strong id="nowTitle">Select a channel</strong>
+            </div>
+          </div>
+          <button id="closePlayer" class="ghost">Clear</button>
+        </div>
+        <div class="player">
+          <video id="video" controls playsinline></video>
+          <div class="player-watermark" aria-label="BTECH-TV WORLD CHANNELS">
+            <img src="assets/btech-tv-world-channels.svg" alt="BTECH-TV WORLD CHANNELS">
+          </div>
+          <div id="playerEmpty" class="player-empty">
+            <div class="big-tv">📺</div>
+            <strong>Select a channel to start playback</strong>
+            <small>Some streams may be geo-blocked, offline, or require a supported browser.</small>
+          </div>
+        </div>
+        <div class="player-brand-strip">
+          <img src="assets/btech-tv-world-channels.svg" alt="BTECH-TV WORLD CHANNELS">
+          <span>Official BTECH-TV World Channels Player</span>
+        </div>
+        <div class="player-info">
+          <span id="nowMeta">No channel selected</span>
+          <button id="copyStream" class="ghost" disabled>Copy stream URL</button>
+        </div>
+      </div>
+
+      <div class="filters-card">
+        <div class="filter-row">
+          <select id="countryFilter"><option value="">All countries</option></select>
+          <select id="categoryFilter"><option value="">All categories</option></select>
+          <select id="languageFilter"><option value="">All languages</option></select>
+          <select id="qualityFilter">
+            <option value="">Any quality</option>
+            <option value="4K">4K</option><option value="1080">1080p+</option>
+            <option value="720">720p+</option><option value="480">480p+</option>
+          </select>
+        </div>
+        <div class="result-bar">
+          <strong>Channel Director</strong>
+          <span id="resultText">0 channels</span>
+        </div>
+      </div>
+
+      <div class="channel-director-scroll" aria-label="Channel Director">
+        <section id="grid" class="grid"></section>
+        <div id="empty" class="empty" hidden>No channels match the current filters.</div>
+        <button id="loadMore" class="load-more" hidden>Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="accessGate" class="access-gate" aria-modal="true" role="dialog">
+    <div class="access-panel">
+      <div class="access-brand"><img src="assets/btech-tv-world-channels.svg" alt="BTECH-TV WORLD CHANNELS" class="access-logo"><div><strong>BTECH-TV WORLD CHANNELS</strong><div style="color:#8fa4c1;font-size:12px">WORLD IPTV PACKAGE ACTIVATION</div></div></div>
+      <h2 id="accessTitle">5-Minute Demo Trial</h2>
+      <p id="accessMessage">Your free demo gives you access to the dashboard for 5 minutes. When it ends, choose a channel package to continue.</p>
+      <div id="trialTimer" class="trial-timer">05:00</div>
+      <div id="packageForm" class="package-grid" hidden>
+        <div class="package-full"><label for="packageSize">CHANNEL PACKAGE</label><select id="packageSize"></select></div>
+        <div><label for="gateway">PAYMENT GATEWAY</label><select id="gateway"><option value="paystack">Paystack — Demo</option><option value="flutterwave">Flutterwave — Demo</option><option value="monnify">Monnify — Demo</option><option value="stripe">Stripe — Demo</option></select></div>
+        <div><label>VALIDITY</label><input value="30 days" readonly></div>
+      </div>
+      <div id="accessActions" class="access-actions"><button id="startTrialBtn" class="access-btn">Start 5-Minute Trial</button></div>
+    </div>
+  </div>
+  <script>
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
